@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Change password</title>
+<meta charset="UTF-8">
+</head>
+<body>
 <h1>Change password</h1>
 <table>
 	<tr>
@@ -17,3 +24,5 @@
 		<td><input type="submit" value="Change password"></td>
 	</tr>
 </table>
+</body>
+</html>
