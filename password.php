@@ -2,7 +2,7 @@
 <table>
 	<tr>
 		<th>Username</th>
-		<td><?php echo $_SERVER['REMOTE_USER']; ?></td>
+		<td><?php echo htmlspecialchars($_SERVER['REMOTE_USER']); ?></td>
 	</tr>
 	<tr>
 		<th>New password</th>
