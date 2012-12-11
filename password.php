@@ -1,12 +1,11 @@
 <?php
-define('PASSWD_FILE', '../htpasswd');
-$user = $_SERVER['REMOTE_USER'];
+require 'config.php';
 
 if (isset($_POST['password'])) {
 	$password = $_POST['password'];
 	if (isset($_POST['password_confirm']) && $password == $_POST['password_confirm']) {
 		$command = 'htpasswd -b ' . escapeshellarg(PASSWD_FILE)
-			. ' ' . escapeshellarg($user) . ' ' . escapeshellarg($password);
+			. ' ' . escapeshellarg($User) . ' ' . escapeshellarg($password);
 		exec($command, $output, $return);
 
 		if ($return != 0)
@@ -23,17 +22,7 @@ if (isset($_POST['password'])) {
 <head>
 <title>Change password</title>
 <meta charset="UTF-8">
-<style type="text/css">
-body { margin: 0; font-family: Helvetica, Arial, sans-serif; background: #464; }
-#main { margin: 1em auto; padding: 1em 0; width: 30em; max-width: 100%; background: #cfc; }
-h1 { margin: 0 0 0.5em; text-align: center; }
-table { margin: 0 auto; }
-td, th { padding: 0.2em 0.5em; }
-th { text-align: right; }
-p.message { margin: 0.5em 0; padding: 0.3em 0; text-align: center; }
-p.message.error { background: #f77; }
-p.message.success { background: #ff4; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="main">
@@ -45,7 +34,7 @@ p.message.success { background: #ff4; }
 <table>
 	<tr>
 		<th>Username</th>
-		<td><?php echo htmlspecialchars($user); ?></td>
+		<td><?php echo htmlspecialchars($User); ?></td>
 	</tr>
 	<tr>
 		<th>New password</th>
