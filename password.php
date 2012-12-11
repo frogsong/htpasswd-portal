@@ -11,7 +11,7 @@ if (isset($_POST['password'])) {
 		if ($return != 0)
 			$message = array('error', 'Error setting password: ' . $return);
 		else
-			$message = array('success', 'Password changed. You will be asked to log in again.');
+			$message = array('success', 'Password changed. <a href="./">Log in again</a>.');
 	}
 	else $message = array('error', 'Passwords do not match');
 }
@@ -27,15 +27,12 @@ if (isset($_POST['password'])) {
 <body>
 <div id="main">
 <h1>Change password</h1>
+<p id="user">Logged in as <strong><?php echo htmlspecialchars($User); ?></strong></p>
 <?php if (isset($message)): ?>
-<p class="message <?php echo $message[0] ?>"><?php echo htmlspecialchars($message[1]) ?></p>
+<p class="message <?php echo $message[0] ?>"><?php echo $message[1] ?></p>
 <?php endif ?>
 <form action="" method="post">
 <table>
-	<tr>
-		<th>Username</th>
-		<td><?php echo htmlspecialchars($User); ?></td>
-	</tr>
 	<tr>
 		<th>New password</th>
 		<td><input type="password" name="password" size="20" maxlength="40"></td>

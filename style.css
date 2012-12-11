@@ -1,9 +1,11 @@
 body { margin: 0; font-family: Helvetica, Arial, sans-serif; background: #464; }
-#main { margin: 1em auto; padding: 1em 0; width: 30em; max-width: 100%; background: #cfc; }
-h1 { margin: 0 0 0.5em; text-align: center; }
-table { margin: 0 auto; }
+#main { margin: 1em auto; padding: 1em; width: 28em; max-width: 100%; background: #cfc; }
+#user { text-align: right; }
+h1 { margin: 0 0 0.5em; text-align: center; font-size: 1.75em; }
+table { width: 100%; }
 td, th { padding: 0.2em 0.5em; }
 th { text-align: right; }
+td input[type="password"] { width: 100%; }
 p.message { margin: 0.5em 0; padding: 0.3em 0; text-align: center; }
 p.message.error { background: #f77; }
 p.message.success { background: #ff4; }
