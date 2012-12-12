@@ -1,19 +1,25 @@
 <?php
 require 'config.php';
 
-if (isset($_POST['password'])) {
-	$password = $_POST['password'];
-	if (isset($_POST['password_confirm']) && $password == $_POST['password_confirm']) {
-		$command = 'htpasswd -b ' . escapeshellarg(PASSWD_FILE)
-			. ' ' . escapeshellarg($User) . ' ' . escapeshellarg($password);
-		exec($command, $output, $return);
+function passwords_match() {
+	return isset($_POST['password_confirm']) && $_POST['password'] == $_POST['password_confirm'];
+}
 
-		if ($return != 0)
-			$message = array('error', 'Error setting password: ' . $return);
-		else
-			$message = array('success', 'Password changed. <a href="./">Log in again</a>.');
-	}
-	else $message = array('error', 'Passwords do not match');
+function change_password($user, $pass) {
+	exec('cp ' . escapeshellarg(PASSWD_FILE) . '{,.bak}');
+	$command = 'htpasswd -b ' . escapeshellarg(PASSWD_FILE)
+		. ' ' . escapeshellarg($user) . ' ' . escapeshellarg($pass);
+	exec($command, $output, $return);
+	return $return;
+}
+
+if (isset($_POST['password'])) {
+	if (!passwords_match())
+		$message = array('error', 'Passwords do not match');
+	else if (($return = change_password($User, $_POST['password'])) != 0)
+		$message = array('error', 'Error setting password: ' . $return);
+	else
+		$message = array('success', 'Password changed. <a href="./">Log in again</a>.');
 }
 
 ?>
