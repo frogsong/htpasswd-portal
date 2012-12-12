@@ -12,3 +12,12 @@
 <p id="user">Logged in as <strong><?php echo htmlspecialchars($User); ?></strong><br>
 <a href="password.php">Change password</a></p>
 
+<ul id="services">
+<?php foreach ($Services as $name => $link): ?>
+<li>
+<a href="<?php echo $link ?>"><?php echo $name ?></a>
+</li>
+<?php endforeach ?>
+</ul>
+</div>
+</body>

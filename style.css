@@ -1,11 +1,22 @@
-body { margin: 0; font-family: Helvetica, Arial, sans-serif; background: #464; }
-#main { margin: 1em auto; padding: 1em; width: 28em; max-width: 100%; background: #cfc; }
+body, h1, p, ul { margin: 0; padding: 0; }
+body { font-family: Helvetica, Arial, sans-serif; background: hsl(120, 30%, 20%); }
+#main { margin: 1em auto; padding: 1em; width: 28em; max-width: 100%; background: hsl(120, 30%, 90%) ; }
 #user { text-align: right; }
-h1 { margin: 0 0 0.5em; text-align: center; font-size: 1.75em; }
+h1 { margin-bottom: 0.28em; text-align: center; font-size: 1.75em; }
+p { margin: 0.5em 0; padding: 0.3em 0; }
+a { color: #004; }
+
+/* index */
+ul { list-style-type: none; border-top: 1px solid hsl(120, 30%, 50%); }
+li { border-bottom: 1px solid hsl(120, 30%, 50%); }
+li a { display: block; text-align: center; font-size: 1.5em; line-height: 2.5em; }
+li a:hover { background: hsl(120, 100%, 80%); }
+
+/* password */
 table { width: 100%; }
 td, th { padding: 0.2em 0.5em; }
 th { text-align: right; }
 td input[type="password"] { width: 100%; }
-p.message { margin: 0.5em 0; padding: 0.3em 0; text-align: center; }
+p.message { text-align: center; }
 p.message.error { background: #f77; }
 p.message.success { background: #ff4; }
