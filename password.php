@@ -6,7 +6,7 @@ function passwords_match() {
 }
 
 function change_password($user, $pass) {
-	exec('cp ' . escapeshellarg(PASSWD_FILE) . '{,.bak}');
+	copy(PASSWD_FILE, PASSWD_FILE . '.bak');
 	$command = 'htpasswd -b ' . escapeshellarg(PASSWD_FILE)
 		. ' ' . escapeshellarg($user) . ' ' . escapeshellarg($pass);
 	exec($command, $output, $return);
