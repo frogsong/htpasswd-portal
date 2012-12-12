@@ -17,7 +17,7 @@ a { color: #004; }
 ul { list-style-type: none; border-top: 1px solid hsl(120, 30%, 50%); }
 li { border-bottom: 1px solid hsl(120, 30%, 50%); }
 li a { display: block; text-align: center; font-size: 1.5em; line-height: 2.5em; }
-li a:hover { background: hsl(120, 100%, 80%); }
+li a:hover, li a:focus { background: hsl(120, 100%, 80%); }
 
 /* password */
 table { width: 100%; }
