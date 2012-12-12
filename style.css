@@ -1,12 +1,12 @@
 body, h1, p, ul { margin: 0; padding: 0; }
-body { font-family: Helvetica, Arial, sans-serif; background: hsl(120, 30%, 20%); }
+body { font-family: Helvetica, Arial, sans-serif; background: #234223; }
 #main {
   margin: 1em auto;
   padding: 1em;
   width: 28em;
   max-width: -webkit-calc(100% - 4em);
   max-width: calc(100% - 4em);
-  background: hsl(120, 30%, 90%);
+  background: #ddeddd;
 }
 #user { text-align: right; }
 h1 { margin-bottom: 0.28em; text-align: center; font-size: 1.75em; }
@@ -14,10 +14,10 @@ p { margin: 0.5em 0; padding: 0.3em 0; }
 a { color: #004; }
 
 /* index */
-ul { list-style-type: none; border-top: 1px solid hsl(120, 30%, 50%); }
-li { border-bottom: 1px solid hsl(120, 30%, 50%); }
+ul { list-style-type: none; border-top: 1px solid #59a559; }
+li { border-bottom: 1px solid #59a559; }
 li a { display: block; text-align: center; font-size: 1.5em; line-height: 2.5em; }
-li a:hover, li a:focus { background: hsl(120, 100%, 80%); }
+li a:hover, li a:focus { background: #99fe99; }
 
 /* password */
 table { width: 100%; }
